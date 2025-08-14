@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">crunchyDroll</string>
+    <string name="nombreApp">CrunchyDroll</string>
+    <string name="miNombre">Pablo Salcedo</string>
+    <string name="descripcion1">Inicia una nueva aventura con CrunchyDroll y descubre una nueva forma de ver el mundo</string>
+    <string name="button1">Comienza</string>
+    <string name="registrar">Regístrate</string>
+    <string name="descripcion2">La aventura está por iniciar, por favor inicia sesión</string>
+    <string name="button2">Ingresar</string>
+    <string name="recuperar">Recupera Tu Contraseña</string>
+    <string name="google">Ingresa con Google</string>
+    <string name="notienes">No tienes cuenta?</string>
+</resources>
