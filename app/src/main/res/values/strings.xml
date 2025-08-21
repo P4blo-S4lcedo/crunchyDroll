@@ -10,4 +10,17 @@
     <string name="recuperar">Recupera Tu Contraseña</string>
     <string name="google">Ingresa con Google</string>
     <string name="notienes">No tienes cuenta?</string>
+    <string name="registrotext">Para continuar, deberás registrarte con tus datos personales</string>
+    <string name="nombres">Nombres</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="email_example">email@example.com</string>
+    <string name="password">contraseña</string>
+    <string name="confirm_password">confirmar contraseña</string>
+    <string name="number">Celular</string>
+    <string name="yacuenta">Ya tienes una cuenta?</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="terminosYcondiciones">Aceptar Términos y Condiciones</string>
+    <string name="recuperarcontraseña">Para recuperar tu contraseña, por favor ingresa tu correo electrónico. Te llegará un código de verificación</string>
+    <string name="enviar">Enviar</string>
+    <string name="volver">Volver</string>
 </resources>
