@@ -18,36 +18,13 @@ class RegisterActivity : AppCompatActivity() {
         textLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+
         }
 
-        val btnRegistrarse = findViewById<Button>(R.id.button2)
-        btnRegistrarse.setOnClickListener {
-            mostrarDialogoTerminos()
-        }
-    }
-
-
-
-    private fun mostrarDialogoTerminos() {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Términos y Condiciones")
-        builder.setMessage("¿Aceptas los términos y condiciones para continuar?")
-
-        builder.setPositiveButton("Sí, acepto") { dialog, _ ->
-            // Redirigir al Login
+        val buttonLogin = findViewById<Button>(R.id.button2)
+        buttonLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-            finish() // Opcional: para cerrar la pantalla de registro
-            dialog.dismiss()
         }
-
-        builder.setNegativeButton("No") { dialog, _ ->
-            // No hace nada, solo cierra el diálogo
-            dialog.dismiss()
-        }
-
-        builder.setCancelable(false) // Evita que se cierre tocando afuera
-        val dialog = builder.create()
-        dialog.show()
     }
 }
