@@ -14,14 +14,14 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         //Busca el boton en el XML
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        val btnLogin = findViewById<Button>(R.id.startButton)
         //Define la acción de el clic
         btnLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
-        val textRegister = findViewById<TextView>(R.id.textView5)
+        val textRegister = findViewById<TextView>(R.id.registerText)
         textRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)

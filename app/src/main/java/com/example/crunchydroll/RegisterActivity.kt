@@ -14,14 +14,14 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        val textLogin = findViewById<TextView>(R.id.textView14)
+        val textLogin = findViewById<TextView>(R.id.returnLogin)
         textLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
 
         }
 
-        val buttonLogin = findViewById<Button>(R.id.button2)
+        val buttonLogin = findViewById<Button>(R.id.registerButton)
         buttonLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
