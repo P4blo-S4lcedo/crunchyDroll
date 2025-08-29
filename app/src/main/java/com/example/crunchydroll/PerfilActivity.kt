@@ -13,7 +13,7 @@ class PerfilActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil)
 
-        val textVolver = findViewById<TextView>(R.id.textView21)
+        val textVolver = findViewById<TextView>(R.id.returnLogin)
         textVolver.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)

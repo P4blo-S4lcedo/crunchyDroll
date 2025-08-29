@@ -13,7 +13,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgotpassword)
 
-        val textVolver = findViewById<TextView>(R.id.textView17)
+        val textVolver = findViewById<TextView>(R.id.returnText)
         textVolver.setOnClickListener {
             val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
