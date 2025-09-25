@@ -22,6 +22,7 @@
             android:gravity="center">
 
             <ImageView
+                android:id="@+id/menu_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:clickable="true"
@@ -51,14 +52,13 @@
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navigation_view"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:background="@color/black"
-            app:menu="@menu/menu" />
-
     </LinearLayout>
 
+    <com.google.android.material.navigation.NavigationView
+        android:layout_gravity="start"
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        app:menu="@menu/menu" />
 </androidx.drawerlayout.widget.DrawerLayout>

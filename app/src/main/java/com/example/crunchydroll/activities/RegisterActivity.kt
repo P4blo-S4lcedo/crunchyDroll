@@ -13,7 +13,7 @@ import com.example.crunchydroll.R
 
 class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var SharedPreferences : SharedPreferences
+    private lateinit var sharedPreferences : SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,7 @@ class RegisterActivity : AppCompatActivity() {
 
         }
 
-        SharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
 
         setUpOnClickListeners()
     }
@@ -51,7 +51,7 @@ class RegisterActivity : AppCompatActivity() {
             val terminos = checkBox.isChecked
 
             if (validarCampos(nombres, apellidos, email, telefono, contraseña, contraseña2, terminos)) {
-                guardarDatos(nombres, apellidos, email, telefono, contraseña, contraseña2, terminos)
+                guardarDatos(nombres, apellidos, email, telefono, contraseña, terminos)
 
                 Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
 
@@ -89,6 +89,10 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "Por favor confirme su contraseña", Toast.LENGTH_SHORT).show()
             return false
         }
+        if (contraseña != contraseña2) {
+            Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+            return false
+        }
         if (!terminos) {
             Toast.makeText(this, "Debe aceptar los términos y condiciones", Toast.LENGTH_SHORT).show()
             return false
@@ -96,14 +100,13 @@ class RegisterActivity : AppCompatActivity() {
         return true
     }
 
-    private fun guardarDatos(nombres: String, apellidos: String, email: String, telefono: String, contraseña: String, contraseña2: String, terminos: Boolean) {
-        val editor = SharedPreferences.edit()
+    private fun guardarDatos(nombres: String, apellidos: String, email: String, telefono: String, contraseña: String, terminos: Boolean) {
+        val editor = sharedPreferences.edit()
         editor.putString("nombres",nombres)
         editor.putString("apellidos",apellidos)
         editor.putString("email",email)
         editor.putString("telefono",telefono)
-        editor.putString("contrasela",contraseña)
-        editor.putString("contraseña2",contraseña2)
+        editor.putString("contraseña",contraseña)
         editor.putBoolean("terminos", terminos)
         editor.apply()
 

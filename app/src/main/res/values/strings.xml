@@ -23,13 +23,11 @@
     <string name="recuperarcontraseña">Para recuperar tu contraseña, por favor ingresa tu correo electrónico. Te llegará un código de verificación</string>
     <string name="enviar">Enviar</string>
     <string name="volver">Volver</string>
-    <string name="nombre">Pablo Salcedo</string>
-    <string name="telefono">+57 301 1234567</string>
-    <string name="correo">jpsalcedo@ucompensar.edu.co</string>
     <string name="editar_perfil">Editar Perfil</string>
     <string name="confirmPassword">Confirme su contrasña</string>
     <string name="inicio">inicio</string>
     <string name="perfil">perfil</string>
     <string name="configuracion">configuracion</string>
     <string name="cerrar_sesion">cerrar sesion</string>
+    <string name="guardar">Guardar cambios</string>
 </resources>
