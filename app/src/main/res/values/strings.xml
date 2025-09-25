@@ -28,4 +28,8 @@
     <string name="correo">jpsalcedo@ucompensar.edu.co</string>
     <string name="editar_perfil">Editar Perfil</string>
     <string name="confirmPassword">Confirme su contrasña</string>
+    <string name="inicio">inicio</string>
+    <string name="perfil">perfil</string>
+    <string name="configuracion">configuracion</string>
+    <string name="cerrar_sesion">cerrar sesion</string>
 </resources>

@@ -1,15 +1,15 @@
-package com.example.crunchydroll
+package com.example.crunchydroll.activities
 
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
-import android.os.PersistableBundle
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.crunchydroll.R
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -38,7 +38,7 @@ class RegisterActivity : AppCompatActivity() {
         val etNumero = findViewById<EditText>(R.id.textPhone)
         val etContraseña = findViewById<EditText>(R.id.textPassword)
         val etContraseña2 = findViewById<EditText>(R.id.textPassword2)
-
+        val checkBox = findViewById<CheckBox>(R.id.checkBox)
         val btnRegistro = findViewById<Button>(R.id.registerButton)
 
         btnRegistro.setOnClickListener {
@@ -48,9 +48,10 @@ class RegisterActivity : AppCompatActivity() {
             val telefono = etNumero.text.toString().trim()
             val contraseña = etContraseña.text.toString()
             val contraseña2 = etContraseña2.text.toString()
+            val terminos = checkBox.isChecked
 
-            if (validarCampos(nombres, apellidos, email, telefono, contraseña, contraseña2)) {
-                guardarDatos(nombres, apellidos, email, telefono, contraseña, contraseña2)
+            if (validarCampos(nombres, apellidos, email, telefono, contraseña, contraseña2, terminos)) {
+                guardarDatos(nombres, apellidos, email, telefono, contraseña, contraseña2, terminos)
 
                 Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
 
@@ -61,7 +62,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun validarCampos(nombres: String, apellidos: String, email: String, telefono: String, contraseña: String, contraseña2: String): Boolean {
+    private fun validarCampos(nombres: String, apellidos: String, email: String, telefono: String, contraseña: String, contraseña2: String, terminos: Boolean): Boolean {
         if (nombres.isEmpty()) {
             Toast.makeText(this, "Por favor ingrese su nombre(s)", Toast.LENGTH_SHORT).show()
             return false
@@ -88,10 +89,14 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "Por favor confirme su contraseña", Toast.LENGTH_SHORT).show()
             return false
         }
+        if (!terminos) {
+            Toast.makeText(this, "Debe aceptar los términos y condiciones", Toast.LENGTH_SHORT).show()
+            return false
+        }
         return true
     }
 
-    private fun guardarDatos(nombres: String, apellidos: String, email: String, telefono: String, contraseña: String, contraseña2: String) {
+    private fun guardarDatos(nombres: String, apellidos: String, email: String, telefono: String, contraseña: String, contraseña2: String, terminos: Boolean) {
         val editor = SharedPreferences.edit()
         editor.putString("nombres",nombres)
         editor.putString("apellidos",apellidos)
@@ -99,6 +104,7 @@ class RegisterActivity : AppCompatActivity() {
         editor.putString("telefono",telefono)
         editor.putString("contrasela",contraseña)
         editor.putString("contraseña2",contraseña2)
+        editor.putBoolean("terminos", terminos)
         editor.apply()
 
     }
